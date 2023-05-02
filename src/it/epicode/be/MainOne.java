@@ -36,14 +36,16 @@ public class MainOne {
 	public static void inserisciInArray() {
 		Scanner input = new Scanner(System.in);
 		String[] stringArray = {"a", "b", "c", "d", "e", ""};
-		System.out.println(Arrays.toString(stringArray));
+		
 		String newElement;
 		System.out.println("Write your fave word: ");
+		
 		newElement = input.nextLine();
-		for (int i = 2; i < 5; i++ ){	
-			stringArray[2] = newElement;
-			stringArray[i] = stringArray[i+1];	
+		for (int i = stringArray.length - 2 ; i >= 2; i-- ){	
+			stringArray[i+1] = stringArray[i];	
 		};
+		
+		stringArray[2] = newElement;
 		
 		System.out.println("The final array is: " + Arrays.toString(stringArray));
 		input.close();
